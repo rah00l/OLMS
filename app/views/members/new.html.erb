@@ -1,0 +1,64 @@
+<h1>Create new member</h1>
+
+<table width=100%><tr><td>
+<table align=center width="79"><tr>
+
+
+<% form_for(@member) do |f| %>
+  <%= f.error_messages %>
+
+ 
+  <tr>
+  <td width="67">   <%= f.label :name %>:</td>
+  <td width="67">   <%= text_field_with_auto_complete :member, :name, {}, {:method => :get} %></td>
+  </tr>
+
+  <tr>
+  <td width="67">  <%= f.label :user_password, 'Password' %>:</td>
+  <td width="67">  <%= f.password_field :password, :size => 40 %></td>
+  </tr>
+
+  <tr>
+  <td width="67">  <%= f.label :user_password_confirmation, 'Confirm' %>:</td> 
+  <td width="67">  <%= f.password_field :password_confirmation, :size => 40 %></td>
+  </tr>
+
+  <tr>
+  <td width="67">  <%= f.label :Address %>:</td>
+  <td width="67">  <%= f.text_area :Address, :rows => 5, :columns => 8 %></td>
+  </tr>
+  
+  <tr>
+  <td width="67">  <%= f.label :PhoneNo %>:</td>
+  <td width="67">  <%= f.text_field :PhoneNo, :size => 40 %></td>
+  </tr>
+
+
+  <tr>
+  <td width="67">  <%= f.label :UserType %></td>
+  <td width="67">  <%= f.select :usertype,
+  				 {"Admin" => "Admin",
+  				  "Member" => "Member"}%></td>
+  </tr>
+  
+  <tr>
+  <td width="67">  <%= f.label :Email %></td>
+  <td width="67"> <%= f.text_field :Email %></td>
+  </tr>
+
+  <tr>
+  <td width="67">  <%= f.label :Expired %></td>
+  <td width="200">  <%= f.date_select :Expired %></td>
+  </tr>
+  
+  <tr>
+		
+    <td width="150">&nbsp;</td>
+    <td width="150">  <%= f.submit 'Create' %>  &nbsp;&nbsp;<%= link_to 'Back', members_path %></td>
+
+  </tr>
+<% end %>
+</tr>
+</table>
+
+</td></tr></table>

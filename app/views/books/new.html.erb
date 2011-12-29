@@ -1,0 +1,70 @@
+<h1>New book</h1>
+<table width=100%><tr><td>
+<table align=center width="79"><tr>
+
+<% form_for(@book) do |f| %>
+  <%= f.error_messages %>
+
+<tr>
+   <td width="67"> <%= f.label :BookID %></td>
+   <td width="67"><%= f.text_field :BookID %></td>
+</tr>
+<tr>
+  <td width="67"><%= f.label :Subject %></td>
+  <td width="67"><%= f.text_field :Subject %></td>
+</tr>
+<tr>
+  <td width="67"><%= f.label :Title %></td>
+  <td width="67"><%= f.text_field :Title %></td>
+</tr>
+<tr>
+    <td width="67"><%= f.label :Author %></td>
+    <td width="67"><%= f.text_field :Author %></td>
+</tr>
+<tr>
+    <td width="67"><%= f.label :Publisher %></td>
+    <td width="67"><%= f.text_field :Publisher %></td>
+</tr>
+<tr>
+ 
+    <td width="67"><%= f.label :Copyright %></td>
+    <td width="67"><%= f.text_field :Copyright %></td>
+
+</tr>
+<tr>
+    <td width="67"><%= f.label :Edition %></td>
+
+    <td width="67"><%= f.text_field :Edition %></td>
+
+</tr>
+<tr>
+    <td width="67"><%= f.label :Pages %></td>
+
+    <td width="67"><%= f.text_field :Pages %></td>
+
+</tr>
+<tr>
+    <td width="67"><%= f.label :ISBN %></td>
+    <td width="67"><%= f.text_field :ISBN %></td>
+
+</tr>
+<tr>
+    <td width="67"><%= f.label :NumberOfBooks %></td>
+
+    <td width="67"><%= f.text_field :NumberOfBooks %></td>
+
+</tr>
+<tr>  
+    <td width="67"><%= f.label :Library %></td>
+    <td width="67"><%= f.text_field :Library %></td>
+
+</tr>
+<tr>
+	<td>&nbsp;</td>
+  <td width="67"><%= f.submit 'Create' %>&nbsp;<%= link_to 'Back', books_path %></td>
+ 
+<% end %>
+</tr>
+</table>
+
+</td></tr></table>

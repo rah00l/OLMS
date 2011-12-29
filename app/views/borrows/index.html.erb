@@ -1,0 +1,26 @@
+<h1>Listing borrows</h1>
+
+<table>
+  <tr>
+    <th>Bookid</th>
+    <th>Memberid</th>
+    <th>Dayofborrowed</th>
+    <th>Dayofreturn</th>
+  </tr>
+
+<% @borrows.each do |borrow| %>
+  <tr>
+    <td><%=h borrow.BookID %></td>
+    <td><%=h borrow.MemberID %></td>
+    <td><%=h borrow.DayOfBorrowed %></td>
+    <td><%=h borrow.DayOfReturn %></td>
+    <td><%= link_to 'Show', borrow %></td>
+    <td><%= link_to 'Edit', edit_borrow_path(borrow) %></td>
+    <td><%= link_to 'Destroy', borrow, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New borrow', new_borrow_path %>

@@ -1,0 +1,35 @@
+<h3><font color="#BA5E4F">Send Email Notofication Alert to Return a Book</font></h3>
+<% form_tag :action => 'sendmail' do %>
+<table width=100%>
+	<tr>
+		<td>
+	
+	<table align=center width="79">
+	
+	<tr>
+		<td width="67" valign=top><label for="email_subject">Subject</label>:</td>
+		<td><%= text_field 'email', 'subject', {:value => @sub} %></td>
+		</tr>
+
+	<tr>
+		<td width="67" valign=top><label for="email_recipient">Recipient</label>:</td>
+		<td><%= text_field 'email', 'recipient',{:value => @mail_id1} %></td>
+		</tr>
+
+	<tr>
+		<td width="67" valign=top><label for="email_message">Message</label>:</td>
+		<td><%= text_area 'email', 'message', :value => @message %></td>
+	</tr>
+	
+	<tr>
+		<td>&nbsp;</td>
+		<td>
+			<%= submit_tag "Send" %>
+		</td>
+	</table>
+	
+	</td>
+	</tr>
+</table>
+  </font>
+<% end %>

@@ -1,0 +1,22 @@
+<h1><h1>Listing books</h1>
+
+<table>
+  <tr>
+    <th>Bookid</th>
+   
+    <th>MemberID</th>
+    <th>DayOfIssued</th>
+    <th>DayOfReturn</th>
+   </tr>
+
+<% @list.each do |list| %>
+  <tr>
+    <td><%=h list.BookID %></td>
+    <td><%=h list.MemberID %></td>
+    <td><%=h list.DayOfBorrowed %></td>
+    <td><%=h list.DayOfReturn %></td>
+    </tr>
+<% end %>
+</table>
+
+<br />

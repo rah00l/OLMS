@@ -1,0 +1,69 @@
+<h1>Editing book</h1>
+
+<% form_for(@book) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :BookID %><br />
+    <%= f.text_field :BookID %>
+  </p>
+  <p>
+    <%= f.label :Subject %><br />
+    <%= f.text_field :Subject %>
+  </p>
+  <p>
+    <%= f.label :Title %><br />
+    <%= f.text_field :Title %>
+  </p>
+  <p>
+    <%= f.label :Author %><br />
+    <%= f.text_field :Author %>
+  </p>
+  <p>
+    <%= f.label :Publisher %><br />
+    <%= f.text_field :Publisher %>
+  </p>
+  <p>
+    <%= f.label :Copyright %><br />
+    <%= f.text_field :Copyright %>
+  </p>
+  <p>
+    <%= f.label :Edition %><br />
+    <%= f.text_field :Edition %>
+  </p>
+  <p>
+    <%= f.label :Pages %><br />
+    <%= f.text_field :Pages %>
+  </p>
+  <p>
+    <%= f.label :ISBN %><br />
+    <%= f.text_field :ISBN %>
+  </p>
+  <p>
+    <%= f.label :NumberOfBooks %><br />
+    <%= f.text_field :NumberOfBooks %>
+  </p>
+ 
+<!--  <p>
+    <%= f.label :NumberOfAvailbleBooks %><br />
+    <%= f.text_field :NumberOfAvailbleBooks %>
+  </p>
+  <p>
+    <%= f.label :NumberOfBorrowedBooks %><br />
+    <%= f.text_field :NumberOfBorrowedBooks %>
+  </p> -->
+  <p>
+    <%= f.label :Library %><br />
+    <%= f.text_field :Library %>
+  </p>
+<!--  <p>
+    <%= f.label :Availble %><br />
+    <%= f.check_box :Availble %>
+  </p> -->
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @book %> |
+<%= link_to 'Back', books_path %>

@@ -1,0 +1,34 @@
+
+
+<table align=center border=5 bordercolor="#BA5E4F"><tr><td align=center>
+
+<h1 align=center>Listing Members</h1> 
+
+<div class=clsdatagrid id=divlist bgcolor=white> 
+<table id="list" cellspacing="0" cellpadding="0" border="2" bordercolor="black" style="border-collapse: collapse"> 
+<tr bgcolor="#BA5E4F">
+      	<th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Mem. Id</font></th> 
+      	<th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Name</font></th> 
+      	<th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Email Id</font></th> 
+      	<th nowrap width="54" height="22" ><font color=white face="Arial" size="2">User Type</font></th>
+      	<th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Date</font></th> 
+      	<th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Edit</font></th> 
+      	<th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Delete</font></th> 
+</tr>
+
+<% @members.each do |member| %>
+  <tr>
+    <td align="center"><font face="Arial"  size="2"><%=h member.MemberID %>&nbsp;</font></td>
+    <td align="center"><font face="Arial"  size="2"><%=h member.name %>&nbsp;</font></td>
+	<td align="center"><font face="Arial"  size="2"><%=h member.Email %>&nbsp;</font></td>
+	<td align="center"><font face="Arial"  size="2"><%=h member.Expired %>&nbsp;</font></td>
+	<td align="center"><font face="Arial"  size="2"><%=h member.usertype %>&nbsp;</font></td>
+	<td align="center"><font face="Arial"  size="2"><%= link_to image_tag("edit.gif", :border => 0), edit_member_path(member) %>&nbsp;</font></td>
+	<td align="center"><font face="Arial"  size="2"><%= link_to image_tag("delete.gif", :border => 0), member, :confirm => 'Are you sure?', :method => :delete %>&nbsp;</font></td>
+ </tr>
+<% end %>
+</table>
+
+<br />
+
+<% link_to 'New member', new_member_path %>

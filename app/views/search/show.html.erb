@@ -1,0 +1,67 @@
+<% if @books == [] %>
+<script>
+var text = '<%= @temp%>';
+
+alert("Book Is Not Present In Library So Connectiong to amazone.com to get details about it");
+
+popupWin = window.open('http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords='+text,
+     'open_window',
+     'menubar, toolbar, location, directories, status, scrollbars, resizable, dependent, width=640, height=480, left=0, top=0')
+</script>
+
+<% else %>
+
+<table align=center border=5 bordercolor="#BA5E4F"><tr><td align=center>
+
+<h1 align=center>Listing Books</h1> 
+
+<div class=clsdatagrid id=divlist bgcolor=white> 
+<table id="list" cellspacing="0" cellpadding="0" border="2" bordercolor="black" style="border-collapse: collapse"> 
+<tr bgcolor="#BA5E4F">
+
+  <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">BookId</font></th> 
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Subject</font></th> 
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Title</font></th> 
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Author</font></th> 
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Publisher</font></th> 
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Copyright</font></th> 
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Edition</font></th> 
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Pages</font></th>
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">ISBN</font></th>
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">NumberOfBooks</font></th>       
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Library</font></th>
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Available</font></th> 
+  </tr>
+
+
+ 
+<% @books.each do |book| %>
+  <tr>
+    <td><font face="Arial"  size="2"><%=h book.BookID %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Subject %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Title %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Author %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Publisher %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Copyright %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Edition %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Pages %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.ISBN %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.NumberOfBooks %>&nbsp;</font></td>
+   <!-- <td><%h book.NumberOfAvailbleBooks %>&nbsp;</td>
+    <td><%h book.NumberOfBorrowedBooks %>&nbsp;</td>-->
+    <td><font face="Arial"  size="2"><%=h book.Library %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Availble %>&nbsp;</font></td>
+    <% if book.Availble == 'Available'%>
+	  <td><font face="Arial"  size="2"><%= button_to "Issue", :controller => 'borrows', :action => 'new', :id => book.BookID  %>&nbsp;</td>
+
+	  <% else %>
+	  <td><font face="Arial"  size="2"><%= button_to "Reserve", :controller => 'search', :action => 'reserve', :id => book.BookID  %>&nbsp;</td>
+  <% end %>
+
+  </tr>
+<% end %>
+</table>
+</div>
+<br />
+<% end%>
+<br />

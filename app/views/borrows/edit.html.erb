@@ -1,0 +1,28 @@
+<h1>Editing borrow</h1>
+
+<% form_for(@borrow) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :BookID %><br />
+    <%= f.text_field :BookID %>
+  </p>
+  <p>
+    <%= f.label :MemberID %><br />
+    <%= f.text_field :MemberID %>
+  </p>
+  <p>
+    <%= f.label :DayOfBorrowed %><br />
+    <%= f.date_select :DayOfBorrowed %>
+  </p>
+  <p>
+    <%= f.label :DayOfReturn %><br />
+    <%= f.date_select :DayOfReturn %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @borrow %> |
+<%= link_to 'Back', borrows_path %>

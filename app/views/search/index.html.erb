@@ -1,0 +1,48 @@
+<html>
+<head>
+</head>
+<script >
+function fun()
+{
+alert("hiii");
+}
+
+</script>
+<body>
+<table width=100% height="241">
+<tr>
+<td height="237">
+
+<table align=center width="308" height="80">
+
+<% form_for :search, :url => { :action => "show" } do |f| %>
+	<tr>
+		<td height="44" width="107"><%= f.label :search, "Search By :" %><br /></td>
+		<td height="44" width="191"><%= f.select :select ,  
+						 { 'Author','1',
+						   'Subject','2',
+						   'Title', '3', 
+						 },
+						  :prompt => "Please Select",
+						  :onchange => "fun();"
+						  %> &nbsp;</td>
+	</tr>
+	
+	<tr>
+	    <td height="63" width="107"><%= f.label :txtfield1, "Enter Data :" %><br /></td>
+    	<td height="63" width="191"><%= f.text_field :txtfield %>&nbsp;</td>
+	</tr>
+	
+    <tr>
+		<td height="33" width="107">&nbsp;</td>
+		<td height="33" width="191"><%= submit_tag "Search"%></td>
+	</td></tr>
+	</table>
+	
+	</td>
+	</tr>
+</table>
+  </font>
+<% end %>
+</body>
+</html>

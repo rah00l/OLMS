@@ -1,0 +1,13 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  BookID: 
+  MemberID: 
+  DayOfBorrowed: 2010-03-01
+  DayOfReturn: 2010-03-01
+
+two:
+  BookID: 
+  MemberID: 
+  DayOfBorrowed: 2010-03-01
+  DayOfReturn: 2010-03-01

@@ -1,0 +1,47 @@
+<h3><font color="#BA5E4F">Send Email To Library Members for new Arrival of Books</font></h3>
+<% form_tag :action => 'sendmail' do %>
+<table width=100%>
+	<tr>
+		<td>
+	
+	<table align=center width="79">
+	<tr>
+	      <td width="100%" colspan="4" height="10" align=center>
+      <% error_messages_for 'entry' %>
+      <%if session[:msg]%>
+			<font color=red size= "4" align=center>
+
+				<div id="msg" style="width:300;border: 2px solid blue; align:center; padding-bottom: 12px; margin-bottom: 20px; align:center
+ 					background-color: #f0f0f0; height:22; padding-left:7px; padding-right:7px; padding-top:7px"><%=session[:msg] %>
+ 					</div>
+				<%session[:msg]=nil%>
+					</font>
+			<% end %></td></tr>
+
+	<tr>
+		<td width="67" valign=top><label for="email_subject">Subject</label>:</td>
+		<td width="2"><%= text_field 'email', 'subject' ,:value => @sub%></td>
+	</tr>
+
+	<tr>
+		<td width="67" valign=top><label for="email_recipient">Recipient</label>:</td>
+		<td width="2"><%= text_area 'email', 'recipient', :value => @mail_arry, :rows => 5 ,:column => 4 %></td>
+	</tr>
+
+	<tr>
+		<td width="67" valign=top><label for="email_message">Message</label>:</td>
+		<td width="2"><%= text_area 'email', 'message', :value => @message %></td>
+	</tr>
+	
+	<tr>
+		<td>&nbsp;</td>
+		<td>
+			<%= submit_tag "Send" %>
+		</td>
+	</table>
+	
+	</td>
+	</tr>
+</table>
+  </font>
+<% end %>

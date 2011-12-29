@@ -1,0 +1,52 @@
+<h1>New Issue</h1>
+
+<% form_for(@borrow) do |f| %>
+  <%= f.error_messages %>
+
+<table width=100%>
+  <tr>
+		<td>
+	
+	<table align=center width="79" height="145">
+	<tr>
+	      <td width="100%" colspan="4" height="10" align=center>
+      <% error_messages_for 'entry' %>
+      <%if session[:msg]%>
+			<font color=red size= "4" align=center>
+
+				<div id="msg" style="width:300;border: 2px solid blue; align:center; padding-bottom: 12px; margin-bottom: 20px; align:center
+ 					background-color: #f0f0f0; height:22; padding-left:7px; padding-right:7px; padding-top:7px"><%=session[:msg] %>
+ 					</div>
+				<%session[:msg]=nil%>
+					</font>
+			<% end %></td></tr>
+	<tr>		
+	<td height="49">
+    <%= f.label :BookID %><br /></td>
+   <td height="49"> <%= f.text_field :BookID, :value=>$book_id %></td></tr><br/>
+  
+  <tr>
+    <td height="49"><%= f.label :MemberID %><br /></td>
+    <td height="49"><%= f.text_field :MemberID, :value => $mem_id, 'disabled' => "true"  %></br></td></tr>
+  
+  
+    <tr>
+    <td height="49"><%= f.label :DayOfBorrowed %><br /></td>
+    <td height="49"><%= f.date_select :DayOfBorrowed %></td></tr><br/>
+  
+  <tr><td height="49">
+    <%= f.label :DayOfReturn %><br /></td>
+    <td height="49"><%= f.date_select :DayOfReturn %></td></tr><br/>
+    
+    <tr>
+		<td height="49">&nbsp;</td>
+		<td height="49">
+			<%= submit_tag "Issue"%>
+		</td>
+	</table>
+	
+	</td>
+	</tr>
+</table>
+  </font>
+<% end %><% link_to 'Back', :controller=>"search", :action=>"show"  %>

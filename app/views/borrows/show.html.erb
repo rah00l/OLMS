@@ -1,0 +1,23 @@
+<p>
+  <b>Bookid:</b>
+  <%=h @borrow.BookID %>
+</p>
+
+<p>
+  <b>Memberid:</b>
+  <%=h @borrow.MemberID %>
+</p>
+
+<p>
+  <b>Dayofborrowed:</b>
+  <%=h @borrow.DayOfBorrowed %>
+</p>
+
+<p>
+  <b>Dayofreturn:</b>
+  <%=h @borrow.DayOfReturn %>
+</p>
+
+
+<%= link_to 'Edit', edit_borrow_path(@borrow) %> |
+<%= link_to 'Back', borrows_path %>

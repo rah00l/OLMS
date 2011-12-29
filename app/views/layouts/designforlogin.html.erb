@@ -1,0 +1,238 @@
+<!-- An unpublished work of Sprylogic Technologies Ltd.  -->
+<!-- © Copyright Sprylogic Technologies Ltd. 2008. All rights reserved  -->
+<!-- version DQMS_ROR_ver1.0.2 -->
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>SpryLogic's Online Library System</title>
+<%=stylesheet_link_tag 'menu_style'-%>
+<head>
+
+<!--<style type="text/css">{  }
+.style1 {font-weight: bold}
+.style3 {font-weight: bold; font-size: 16px; }
+.style4 {font-weight: bold; font-size: 18px; }
+.style6 {
+	font-size: 10px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style9 {
+	font-size: 14px;
+}
+.style10 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-weight: bold;
+}
+.style11 {
+	font-family: Arial, Helvetica, sans-serif
+}
+.style12 {
+	font-size: 12px;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style13 {font-weight: bold; font-size: 14px; color: #666666; font-family: Arial, Helvetica, sans-serif; }
+.style14 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-weight: bold;
+}
+.style17 {font-size: 12px; font-family: Arial, Helvetica, sans-serif; }
+.style20 {font-weight: bold; font-size: 18px; color: #FF9900; font-family: Arial, Helvetica, sans-serif; }
+.style21 {
+	color: #666666;
+	font-weight: bold;
+	font-family: Arial, Helvetica, sans-serif;
+}
+.style23 {color: #FF9900}
+.style24 {
+	color: #3399CC;
+	font-size: 24px;
+	font-weight: bold;
+}
+.style25 {color: #000000}
+.style26 {font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: bold; color: #000000; }
+-->
+
+</style>
+<%= stylesheet_link_tag "mymenu" %>
+<%= javascript_include_tag "prototype","effects","application",:defaults %>
+<%= javascript_include_tag  :defaults %>
+
+<%= javascript_include_tag "dropdowntabs2"%>
+
+</head>
+<body topmargin=0 bottommargin=0 leftmargin=0 rightmargin=0 >
+<table cellpadding="0" cellspacing="0" border="0" align="center" width="100%" height="429">
+  <tr>    
+    <td  height="359" align="center" width="100%" >
+    <table  border="0" align="center" cellpadding="0" cellspacing="0" height="64" width="100%">
+     <tr bgcolor=#336699>
+  		<td width="100%" height="77" bgcolor="#336699" >    
+  			<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse" bordercolor="#111111" width="100%" id="AutoNumber3" height="186">
+          		<tr>
+            		<td  width="29%" height="186" bgcolor="#ffffff" >
+            			<div align="center">
+              				<table border="0" cellpadding="0" cellspacing="0" width="299" id="AutoNumber4" height="127">
+                				<tr>
+                  					<td  width="12" height="25">&nbsp;</td>
+                  					<td  width="287" height="25"></td>
+                				</tr>
+                				<tr>
+                  					<td width="12">&nbsp;</td>
+                  					<td id=logo_accounts style="background-repeat:no-repeat" width="287" height="99">&nbsp;</td>
+                				</tr>
+              				</table>
+            			</div>
+            		</td>
+            		<td id=banner width="66%" height="186" bgcolor="white" >&nbsp;</td>
+          		</tr>
+        	</table>
+  		</td>
+  	</tr>      
+  </table>
+     <!--<div id="links" style="width: 923; height: 23">-->
+      <table width="100%"  bordercolor="#ffffff" cellpadding="0" cellspacing="0"  height="30">
+        <!--<tr bgcolor=#FF6600>        
+           <td width="100%" height="27" bgcolor="#336699">
+         		<BLINK>
+          			<MARQUEE  behavior="alternate" scrolldelay="100" class='menu' width="100%" height="16"><font color="#FFFFF" face="Arial" >
+						<b>Welcome To Admin</b></font>	
+					</MARQUEE>
+				</BLINK>        
+        	</td>
+        </tr>      -->
+        <tr> 
+       <td width="100%">             
+              
+   <!--          <%# if  session[:user_type] == 'Admin' %>
+                        <div id="invertedtabsline" >&nbsp;</div>
+                       
+
+<div id="invertedtabs">
+	<ul>
+    	<li style="margin-left: 1px"> <a  href="#" rel="dropmenu1_a" title="Books"> <span>Books</span> </a>
+		<li><a  href="#" rel="dropmenu2_a" title="Members"> <span>Members</span> </a></li>
+		
+
+		<li> <span><%= link_to 'Search', :controller=> "search", :action => 'index' %></span></li>
+		<li><a  href="#" rel="dropmenu3_a" title="Loan"> <span>Loan</span> </a></li>
+		<!--<li> <span><%= link_to 'Clear', :controller=> "status", :action => 'clearval' %></span></li> --
+		
+		<li> <span><%= link_to "Log Out", :controller=> "admin", :action => 'logout' %></span></li>
+	</ul>
+</div>
+<div class="ddcolortabsline">&nbsp;</div> 
+
+<!--1st drop down menu --                                               
+<div id="dropmenu1_a" class="dropmenudiv_a">
+	<%= link_to 'Add Book', :controller => 'books', :action => "new" %>
+	<%= link_to 'List All Books', :controller=> "books", :action => 'index' %>
+	<%= link_to 'List Available Books', :controller=> "extrabook", :action => 'availablebooks' %>
+	<%= link_to 'List Issued Books', :controller=> "extrabook", :action => 'borrowedbooks' %>
+	<%= link_to 'List Favorite Books', :controller=> "extrabook", :action => 'favoritebooks' %>
+	<%= link_to 'New Arrival Notification', :controller=> "mailer", :action => 'newarrival' %>
+
+</div>
+
+<!--2nd drop down menu--                                         
+<div id="dropmenu2_a" class="dropmenudiv_a">
+	<%= link_to 'Add Member', :controller => 'members', :action => "new" %>
+	<%= link_to 'List All Members', :controller=> "members", :action => 'index' %>
+		<%= link_to 'Alert', :controller=> "alert", :action => 'list' %>
+</div>   
+
+<div id="dropmenu3_a" class="dropmenudiv_a">
+	<%= link_to 'Issue Book', :controller => 'extrabook', :action => "new1" %>
+	<%= link_to 'Return Book', :controller=> "return", :action => 'new' %>
+
+</div>
+
+									 <script type="text/javascript">
+                                            //SYNTAX: tabdropdown.init("menu_id", [integer OR "auto"])
+                                               tabdropdown.init("invertedtabs",3 )
+                                      </script>
+      <%# else%>
+  
+             <div id="invertedtabsline" >&nbsp;</div>
+                       
+
+<div id="invertedtabs">
+	<ul>
+    	<li style="margin-left: 1px"> <a  href="#" rel="dropmenu1_a" title="Books"> <span>Books</span> </a>
+		- <li><a  href="#" rel="dropmenu2_a" title="Members"> <span>Members</span> </a></li> --
+		
+
+		<li> <span><%= link_to 'Search', :controller=> "search", :action => 'index' %></span></li>
+		<li><a  href="#" rel="dropmenu3_a" title="Loan"> <span>Loan</span> </a></li>
+		<!--<li> <span><%= link_to 'Clear', :controller=> "status", :action => 'clearval' %></span></li> --
+		
+		<li> <span><%= link_to "Log Out", :controller=> "admin", :action => 'logout' %></span></li>
+	</ul>
+</div>
+<div class="ddcolortabsline">&nbsp;</div> 
+
+<!--1st drop down menu -                                                 
+<div id="dropmenu1_a" class="dropmenudiv_a">
+	<% link_to 'Add Book', :controller => 'books', :action => "new" %>
+	<%= link_to 'List All Books', :controller=> "books", :action => 'index' %>
+	<%= link_to 'List Available Books', :controller=> "extrabook", :action => 'availablebooks' %>
+	<% link_to 'List Issued Books', :controller=> "extrabook", :action => 'borrowedbooks' %>
+	<%= link_to 'List Favorite Books', :controller=> "extrabook", :action => 'favoritebooks' %>
+	
+
+
+</div>
+
+<!--2nd drop down menu                                        
+<div id="dropmenu2_a" class="dropmenudiv_a">
+	<%= link_to 'Add Member', :controller => 'members', :action => "new" %>
+	<%= link_to 'List All Members', :controller=> "members", :action => 'index' %>
+	
+</div>   
+
+<div id="dropmenu3_a" class="dropmenudiv_a">
+	<%= link_to 'Issue Book', :controller => 'borrows', :action => "new" %>
+	<% link_to 'Return Book', :controller=> "return", :action => 'new' %>
+
+</div>
+
+                                         
+               
+<script type="text/javascript">
+                                            //SYNTAX: tabdropdown.init("menu_id", [integer OR "auto"])
+                                               tabdropdown.init("invertedtabs",3 )
+                                      </script>
+<%#end%>   --     
+
+
+			 </td>
+        </tr>-->
+        <tr>
+        <hr class="line">
+        </tr>
+      </table>
+      <table  border="0" cellspacing="0" cellpadding="0"  width="100%" height="290">       
+          
+        <tr align=center>        
+             			<td width="80%" height="400" align=center id=screen>
+             			<br>
+           				<font  size=5>
+  	 					<p id= "morph1"><b>	<%flash[:notice]%></b></p>
+  	 						<script>
+								$('morph1').morph('color:#900000').morph('color:#fff',{delay:0});
+							</script>
+						</font></p>
+      								<%= @content_for_layout %>
+     
+   						</td>
+        </tr>
+        </table>
+      
+     </td>
+    
+  </tr>
+</table>
+</body>
+</html>

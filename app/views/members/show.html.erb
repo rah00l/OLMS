@@ -1,0 +1,31 @@
+<p>
+  <b>Memberid:</b>
+  <%=h @member.MemberID %>
+</p>
+
+
+<p>
+  <b>Firstname:</b>
+  <%=h @member.name %>
+</p>
+
+<p>
+<%=h @member.usertype%>
+</p>
+
+
+<p>
+  <b>Email:</b>
+  <%=h @member.Email %>
+</p>
+
+
+
+<p>
+  <b>Expired:</b>
+  <%=h @member.Expired %>
+</p>
+
+
+<%= link_to 'Edit', edit_member_path(@member) %> |
+<%= link_to 'Back', members_path %>

@@ -1,0 +1,29 @@
+development:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: library_development
+  pool: 5
+  username: root
+  password: rah00l
+  host: localhost
+
+test:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: library_test
+  pool: 5
+  username: root
+  password: rah00l
+  host: localhost
+
+production:
+  adapter: mysql
+  encoding: utf8
+  reconnect: false
+  database: library_production
+  pool: 5
+  username: root
+  password: rah00l
+  host: localhost

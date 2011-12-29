@@ -1,0 +1,33 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  BookID: 1
+  Subject: MyString
+  Title: MyString
+  Author: MyString
+  Publisher: MyString
+  Copyright: 1
+  Edition: 
+  Pages: 1
+  ISBN: MyString
+  NumberOfBooks: 1
+  NumberOfAvailbleBooks: 1
+  NumberOfBorrowedBooks: 1
+  Library: MyString
+  Availble: false
+
+two:
+  BookID: 1
+  Subject: MyString
+  Title: MyString
+  Author: MyString
+  Publisher: MyString
+  Copyright: 1
+  Edition: 
+  Pages: 1
+  ISBN: MyString
+  NumberOfBooks: 1
+  NumberOfAvailbleBooks: 1
+  NumberOfBorrowedBooks: 1
+  Library: MyString
+  Availble: false

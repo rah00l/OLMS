@@ -1,0 +1,59 @@
+<%# if @books == [] %>
+<script>
+//var text = '<%= @temp%>';
+
+//alert("Book Is Not Present In Library So Connectiong to amazone.com to get details about it");
+
+/*popupWin = window.open('http://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Dstripbooks&field-keywords='+text,
+     'open_window',
+     'menubar, toolbar, location, directories, status, scrollbars, resizable, dependent, width=640, height=480, left=0, top=0')*/
+</script>
+
+<% else %>
+
+<h1>Listing books</h1>
+
+<table>
+  <tr>
+    <th>Bookid</th>
+    <th>Subject</th>
+    <th>Title</th>
+    <th>Author</th>
+    <th>Publisher</th>
+    <th>Copyright</th>
+    <th>Edition</th>
+    <th>Pages</th>
+    <th>Isbn</th>
+    <th>Numberofbooks</th>
+<!--    <th>Numberofavailblebooks</th>
+    <th>Numberofborrowedbooks</th>-->
+    <th>Library</th>
+    <th>Availble</th>
+  </tr>
+
+ 
+<%# @books.each do |book| %>
+  <tr>
+    <td><%#=h book.BookID %></td>
+    <td><%#=h book.Subject %></td>
+    <td><%#=h book.Title %></td>
+    <td><%#=h book.Author %></td>
+    <td><%#=h book.Publisher %></td>
+    <td><%#=h book.Copyright %></td>
+    <td><%#=h book.Edition %></td>
+    <td><%#=h book.Pages %></td>
+    <td><%#=h book.ISBN %></td>
+    <td><%#=h book.NumberOfBooks %></td>
+<!--    <td><%#=h book.NumberOfAvailbleBooks %></td>
+    <td><%#=h book.NumberOfBorrowedBooks %></td>-->
+    <td><%#=h book.Library %></td>
+    <td><%#=h book.Availble %></td>
+<!--    <td><%#= link_to 'Show', book %></td>
+    <td><%#= link_to 'Edit', edit_book_path(book) %></td>
+    <td><%#= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete %></td>-->
+  </tr>
+<%# end %>
+</table>
+
+<%# end%>
+<br />

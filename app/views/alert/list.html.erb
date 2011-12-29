@@ -1,0 +1,57 @@
+<html>
+<head>
+<%= stylesheet_link_tag "mymenu" %>
+<STYLE type="text/css"> 
+  
+DIV.clsDataGrid { 
+BORDER-RIGHT:none; 
+BORDER-TOP: none; 
+BORDER-LEFT: none; 
+BORDER-BOTTOM: none; 
+OVERFLOW: scroll; 
+WIDTH: 550px; 
+HEIGHT:200px;
+} 
+
+</style>
+
+</head> 
+<body> 
+<table  align=center border=5 bordercolor="#BA5E4F"><tr><td align=center>
+
+
+<h3><font color="#BA5E4F">Listing of Member's who have send alert mail</font></h3>
+<% if @list == []%>
+<p><font color="#BA5E4F">No Alert Mails To Send</font></p>
+<% else%>
+
+<div class=clsdatagrid id=divlist bgcolor=white> 
+<table  id="list" cellspacing="0" cellpadding="0" border="2" bordercolor="black" style="border-collapse: collapse"> 
+<tr bgcolor="#BA5E4F">
+	<th nowrap width="54" height="22" ><font color=white face="Arial" size="2">MemberID</font></th> 
+	<th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Bookid</font></th>    	
+	<th nowrap width="54" height="22" ><font color=white face="Arial" size="2">DayOfIssued</font></th>
+    <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">DayOfReturn</font></th> 
+    <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">&nbsp;</font></th> 
+   
+
+</tr>
+
+<% @list.each do |list| %>
+  <tr>
+ 	
+    <td><%= h list.MemberID %>&nbsp;</td>
+    <td><%=h list.BookID %>&nbsp;</td>
+    <td><%=h list.DayOfBorrowed %>&nbsp;</td>
+    <td><%=h list.DayOfReturn %>&nbsp;</td>
+    <td><%= link_to image_tag("send mail.gif", :border => 0), :controller => "Mailer", :action => "index", :id => list.MemberID %> &nbsp;</td></tr>
+<% end %>
+</table>
+
+</div>
+ 
+<% end %>
+<br />
+</td></tr></table>
+</body>
+</html>

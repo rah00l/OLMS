@@ -1,0 +1,12 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    mysql (2.8.1)
+    tlsmail (0.0.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  mysql
+  tlsmail

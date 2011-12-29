@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  MemberID: 1
+  MemberName: MyString
+  Password: MyString
+  FirstName: MyString
+  Email: MyString
+  Major: MyString
+  NumberOfBooks: 1
+  Mony: 9.99
+  Expired: 2010-03-01 12:58:29
+
+two:
+  MemberID: 1
+  MemberName: MyString
+  Password: MyString
+  FirstName: MyString
+  Email: MyString
+  Major: MyString
+  NumberOfBooks: 1
+  Mony: 9.99
+  Expired: 2010-03-01 12:58:29

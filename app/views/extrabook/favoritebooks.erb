@@ -1,0 +1,76 @@
+<html>
+<head>
+<%= stylesheet_link_tag "mymenu" %>
+<STYLE type="text/css"> 
+  
+DIV.clsDataGrid { 
+BORDER-RIGHT:none; 
+BORDER-TOP: none; 
+BORDER-LEFT: none; 
+BORDER-BOTTOM: none; 
+OVERFLOW: scroll; 
+WIDTH: 750px; 
+HEIGHT:200px;
+} 
+
+</style>
+
+</head> 
+<body> 
+<table align=center border=5 bordercolor="#BA5E4F"><tr><td align=center>
+
+<% if @books == []%>
+<p>No List found for borrowed books</p>
+<% else%>
+<h1>Listing Favourite books</h1>
+<div class=clsdatagrid id=divlist bgcolor=white> 
+<table id="list" cellspacing="0" cellpadding="0" border="2" bordercolor="black" style="border-collapse: collapse"> 
+<tr bgcolor="#BA5E4F">
+
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">BookId</font></th> 
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Subject</font></th> 
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Title</font></th> 
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Author</font></th> 
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Publisher</font></th> 
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Copyright</font></th> 
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Edition</font></th> 
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Pages</font></th>
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">ISBN</font></th>
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">NumberOfBooks</font></th>       
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Library</font></th>
+   <th nowrap width="54" height="22" ><font color=white face="Arial" size="2">Available</font></th> 
+  
+          
+  </tr>
+
+<% @books.each do |book| %>
+   <tr>
+    <td><font face="Arial"  size="2"><%=h book.BookID %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Subject %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Title %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Author %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Publisher %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Copyright %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Edition %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Pages %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.ISBN %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.NumberOfBooks %>&nbsp;</font></td>
+    <!--<td><%=h book.NumberOfAvailbleBooks %></td>
+    <td><%=h book.NumberOfBorrowedBooks %></td>-->
+    <td><font face="Arial"  size="2"><%=h book.Library %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%=h book.Availble %>&nbsp;</font></td>   
+    <!--<td><font face="Arial"  size="2"><%= link_to 'Edit', edit_book_path(book) %>&nbsp;</font></td>
+    <td><font face="Arial"  size="2"><%= link_to 'Destroy', book, :confirm => 'Are you sure?', :method => :delete %>&nbsp;</font></td>
+  -->
+  </tr>
+<% end %>
+</table>
+<% end %>
+
+<br />
+<% link_to 'New book', new_book_path %>
+</td></tr></table>
+<%#= will_paginate @books %>
+
+</body>
+</html>

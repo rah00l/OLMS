@@ -1,0 +1,73 @@
+<p>
+  <b>Bookid:</b>
+  <%=h @book.BookID %>
+</p>
+
+<p>
+  <b>Subject:</b>
+  <%=h @book.Subject %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%=h @book.Title %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%=h @book.Author %>
+</p>
+
+<p>
+  <b>Publisher:</b>
+  <%=h @book.Publisher %>
+</p>
+
+<p>
+  <b>Copyright:</b>
+  <%=h @book.Copyright %>
+</p>
+
+<p>
+  <b>Edition:</b>
+  <%=h @book.Edition %>
+</p>
+
+<p>
+  <b>Pages:</b>
+  <%=h @book.Pages %>
+</p>
+
+<p>
+  <b>Isbn:</b>
+  <%=h @book.ISBN %>
+</p>
+
+<p>
+  <b>Numberofbooks:</b>
+  <%=h @book.NumberOfBooks %>
+</p>
+
+<!-- <p>
+  <b>Numberofavailblebooks:</b>
+  <%=h @book.NumberOfAvailbleBooks %>
+</p>
+
+<p>
+  <b>Numberofborrowedbooks:</b>
+  <%=h @book.NumberOfBorrowedBooks %>
+</p>
+
+<p>-->
+  <b>Library:</b>
+  <%=h @book.Library %>
+</p>
+
+<p>
+  <b>Availble:</b>
+  <%=h @book.Availble %>
+</p>
+
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>

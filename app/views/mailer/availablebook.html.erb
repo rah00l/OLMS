@@ -1,0 +1,36 @@
+<h3><font color="#BA5E4F">Send Email Notofication for Availability of reserved Book</font></h3>
+
+<table width=100%>
+	<tr>
+		<td>
+	
+	<table align=center width="79">
+	
+	<tr>
+		<td width="67" valign=top><label for="email_subject">Subject</label>:</td>
+		<td width="2"><%= text_field 'email', 'subject',:value => @sub %></td>
+	</tr>
+
+	<tr>
+		<td width="67" valign=top><label for="email_recipient">Recipient</label>:</td>
+		<td width="2"><%= text_field 'email', 'recipient', :value => @mail_id %></td>
+
+
+<tr>
+		<td width="67" valign=top><label for="email_message">Message</label>:</td>
+
+<%= text_area 'email', 'message', :value => @message %></td>
+	</tr>
+	
+	<tr>
+		<td>&nbsp;</td>
+		<td>
+		<%= submit_tag "Send" %>
+		</td>
+	</table>
+	
+	</td>
+	</tr>
+</table>
+  </font>
+<% end %>

@@ -1,0 +1,77 @@
+
+
+<td width="20%" height="432" ></td>
+  <td width="60%" height="432" bgcolor="white" >
+  <br>
+  <br>
+  
+ 
+<div  id="nifty" style="width: 558; height: 242">
+       <b class="rtop"><b class="r1"></b><b class="r2"></b><b class="r3"></b><b class="r4"></b></b>
+
+<% form_tag do %>
+<table border="0"  style="border-collapse: collapse" cellpadding="2" cellspacing="10" align=center width="80%" height="28" >
+<tr>
+   
+  <td width="38%" height="15" align="center"  ></td>
+  <td width="106%" height="3" align="left" rowspan="3">
+ 
+
+<h1 align="center">&nbsp;</h1>
+<h4><font face="Zurich BT" color="#890103">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Please Login</h4>
+<div title="Account login" id="loginform" class="form" style="width: 300; height: 165">
+    
+<h3><font color=red>
+
+   
+    <% if flash[:notice] %>
+      <div id="message"
+      style="width: 300;border: 2px solid blue;padding-bottom: 12px; margin-bottom: 20px;
+ background-color: #f0f0f0; height:22; padding-left:7px; padding-right:7px; padding-top:7px"><%=flash[:notice]%></div>
+    <% end %> </font>  
+
+
+
+
+
+ <!--   <span style="font-weight: 500">  -->
+
+<p>
+   	<label for="name">Name:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+	<%= text_field_tag :name, params[:name], :size => 25 %>
+    
+
+</p>
+   
+
+   <!-- <span style="font-weight: 550"> -->
+
+   <p>
+   <label for="password">Password:</label>
+	<%= password_field_tag :password, params[:password], :size => 25 %>
+</p>
+    
+   
+
+    <%= submit_tag "Login" %>&nbsp;
+	
+	<% link_to_function "Sign Up" , 
+				remote_function(:url=> {:controller=> "members", :action => 'new'}) -%>
+
+				
+	<%= link_to "Sign Up", :controller=> "signupmem", :action => 'new' %>
+
+
+   
+
+</div>
+</td></tr>
+
+<tr>
+   
+  <td width="38%" height="1" align="center"  ></td>
+  </tr>
+<% end %>
+</table><b class="rbottom"><b class="r4"></b><b class="r3"></b><b class="r2"></b><b class="r1"></b></b>
+
+</div></td><td width="200" height="432"  ></td></h3>

@@ -1,0 +1,40 @@
+<% form_for :return, :url => { :action => "create" } do |f| %>
+      
+      <table width=100%>
+  <tr>
+		<td>
+	
+	<table align=center width="560" height="145">
+	<tr>
+	      <td width="560" colspan="4" height="10" align=center>
+      <% error_messages_for 'entry' %>
+      <%if session[:msg]%>
+			<font color=red size= "4" align=center>
+
+				<div id="msg" style="width:300;border: 2px solid blue; align:center; padding-bottom: 12px; margin-bottom: 20px; align:center
+ 					background-color: #f0f0f0; height:22; padding-left:7px; padding-right:7px; padding-top:7px"><%=session[:msg] %>
+ 					</div>
+				<%session[:msg]=nil%>
+					</font>
+			<% end %></td></tr>
+	<tr>		
+	
+     <td height="49" width="123"><%= f.label :BookID, "Enter Book ID :"%><br /></td>
+    <td height="49" width="208"><%= f.text_field :BookID %></td></tr><br/>
+  	
+	  <tr>
+    <td height="49" width="123"><%= f.label :MemberID, "Enter Member ID :" %><br />
+    <td height="49" width="208"><%= f.text_field :MemberID  %></td></tr><br/>
+        
+	  <tr>
+		<td height="49" width="123">&nbsp;</td>
+		<td height="49" width="208">
+			<%= submit_tag "Return"%>
+		</td></tr>
+	</table>
+	
+	</td>
+	</tr>
+</table>
+  </font>
+<% end %>

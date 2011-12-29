@@ -1,0 +1,53 @@
+<h1>Editing member</h1>
+
+<% form_for(@member) do |f| %>
+  <%= f.error_messages %>
+
+ 
+  
+
+  <p>
+  <p>
+<%= f.label :user_password, 'Password' %>:</br>
+<%= f.password_field :password, :size => 40 %>
+</p>
+<p>
+<%= f.label :user_password_confirmation, 'Confirm' %>:</br>
+<%= f.password_field :password_confirmation, :size => 40 %>
+</p>
+  
+  <p>
+		<%= f.label :name %>:</br>
+		<%= f.text_field :name, :size => 40 %>
+	</p>
+
+	 <p>
+  		<%= f.label :UserType %><br/>
+	  	<%= f.select :usertype,
+  				 {"Admin" => "Admin",
+  				  "Member" => "Member"}%>
+	</p>
+
+  <p>
+<%= f.label :Address %>:</br>
+<%= f.text_area :Address, :rows => 5, :columns => 8 %>
+</p>
+  <p>
+<%= f.label :PhoneNo %>:</br>
+<%= f.text_field :PhoneNo, :size => 40 %>
+</p>
+    <%= f.label :Email %><br />
+    <%= f.text_field :Email %>
+  </p>
+  
+
+  <p>
+    <%= f.label :Expired %><br />
+    <%= f.datetime_select :Expired %>
+  </p>  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @member %> |
+<%= link_to 'Back', members_path %>
